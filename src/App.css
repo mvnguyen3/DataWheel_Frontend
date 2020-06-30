@@ -1,38 +1,95 @@
-.App {
+.navigationBarWrapper{  
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navigationBarContent{
+  padding: 5px;
+  border: 1px solid #00000061;
+  border-radius: 5px;
+  width: 50vw;
+  margin: auto;
+  margin-top: 1vh;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.navigationBarContent .navigation{
+  padding: 5px;
+  text-decoration: none;
+  margin-right: 1vw;
+} 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.successNavLink{
+  background-color: #1e3c86f2;
+  transition: 0.2s;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.buttonViewWrapper{
+  text-align: center;
+  border: 1px solid #00000070;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 12vh;
+  height: 70vh;
+  width: 50vw;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttonViewContent{
+  margin: auto;
+  width: 50vw;
+}
+
+.buttonViewContent button{
+  width: 30vw;
+  height: 7vh;
+  color: white !important;
+}
+
+
+.ButtonResultWrapper{
+  border: 1px solid #00000080;
+  border-radius: 5px;
+  margin: auto;
+  height: 12vh;
+  margin-top: 7vh;
+  width: 20vw; 
+
+}
+
+.ButtonResultContent{
+  padding: 10px;
+  text-align: center;
+}
+
+
+.ButtonResultContent p{
+  font-size: 125%;
+  font-weight: bold;
+}
+
+.ButtonResultContent p span{
+  color: green;
+}
+
+
+.btn-clear-counter{
+  width: 12vw;
+  margin-top: 2vh;
+}
+
+
+/* Report Styles */
+
+.reportComponentWrapper{ 
+  text-align: center;
+  border: 1px solid #00000070;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 12vh;
+  height: 70vh;
+  width: 50vw;  
+}
+
+.reportComponentContent .table tbody tr td{
+  font-size: 100%;
+  font-weight: bold;
 }
