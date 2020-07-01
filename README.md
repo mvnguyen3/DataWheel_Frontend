@@ -1,4 +1,4 @@
-# DataWheel_Frontend
+# DataWheel_Frontend Installation Guide
 Objective: How to run this frontend application on your local machine. Step to run this application:
 
 Clone this project to your local machine using git bash. 
