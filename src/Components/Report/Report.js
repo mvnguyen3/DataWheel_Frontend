@@ -32,6 +32,12 @@ const ReportComponent = props => {
         props.getAverageTime();
     }
 
+    const handlerMessage_count_from_zero = message => {
+        const counter_value_response = message.body.counter_value;
+        setCounter_value(counter_value_response);
+        props.getAverageTime();
+    }
+
     return (
         <div className='reportComponentWrapper'>
             <div className='reportComponentContent'>
@@ -50,6 +56,7 @@ const ReportComponent = props => {
                 </table>
             </div>
             <SockJsClient topics={[GlobalVariables.STOMP_CLIENT.SUBSCRIBER.COUNTER]} onMessage={message => handlerMessage(message)} url={GlobalVariables.STOMP_CLIENT.URL} ref={client => socketClient = client} />
+            <SockJsClient topics={[GlobalVariables.STOMP_CLIENT.SUBSCRIBER.RESET_COUNTER]} onMessage={message => handlerMessage_count_from_zero(message)} url={GlobalVariables.STOMP_CLIENT.URL} ref={client => socketClient = client} />
         </div>
     )
 }
