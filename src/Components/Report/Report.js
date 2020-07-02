@@ -9,33 +9,32 @@ import * as GlobalVariables from '../../Property/GlobalVariables';
 const ReportComponent = props => {
 
     const [counter_value, setCounter_value] = useState(props.counter_value);
-    const [average_time_click, setAverage_time_click] = useState(props.average_time_click);
+
     let socketClient = null;
 
     useEffect(_ => {
         props.getCounterValue();
         props.getAverageTime();
+        props.getAverageClick();
     }, [])
 
     useEffect(_ => {
-        setCounter_value(props.counter_value);        
+        setCounter_value(props.counter_value);
     }, [props.counter_value])
 
-    useEffect(_ => {        
-        setAverage_time_click(props.average_time_click);
-    }, [props.average_time_click])
-    
-    
-    const handlerMessage = message => {                
+
+    const handlerMessage = message => {
         const counter_value_response = message.body.counter_value;
         setCounter_value(counter_value_response);
         props.getAverageTime();
+        props.getAverageClick();
     }
 
     const handlerMessage_count_from_zero = message => {
         const counter_value_response = message.body.counter_value;
         setCounter_value(counter_value_response);
         props.getAverageTime();
+        props.getAverageClick();
     }
 
     return (
@@ -47,10 +46,10 @@ const ReportComponent = props => {
                             <td>Total Click: {counter_value}</td>
                         </tr>
                         <tr>
-                            <td>Average Click: </td>
+                            <td>Average Click In {props.click_rate}s: {props.average_click}</td>
                         </tr>
                         <tr>
-                            <td>Average Time between clicks: {average_time_click}s</td>
+                            <td>Average Time between clicks: {props.average_time_click}s</td>
                         </tr>
                     </tbody>
                 </table>

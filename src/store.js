@@ -4,6 +4,7 @@ import promise from 'redux-promise-middleware';
 // Reducers
 import ButtonViewReducer from './State/ButtonViewReducer';
 import ReportViewReducer from './State/ReportViewReducer';
+import StreamingChartReducer from './State/StreamingChartReducer';
 
 const myLogger = _=> next => action => {
     console.log("logged action: ", action);
@@ -15,6 +16,7 @@ export default createStore(
         // Reducers go here
         ButtonViewReducer,
         ReportViewReducer,
+        StreamingChartReducer,
 
     }),
     {},

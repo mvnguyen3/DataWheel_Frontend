@@ -28,9 +28,9 @@
   border: 1px solid #00000070;
   border-radius: 10px;
   margin: auto;
-  margin-top: 12vh;
-  height: 70vh;
-  width: 50vw;  
+  margin-top: 3vh;
+  height: 87vh;
+  width: 90vw;  
 }
 
 .buttonViewContent{
@@ -49,8 +49,8 @@
   border: 1px solid #00000080;
   border-radius: 5px;
   margin: auto;
-  height: 12vh;
-  margin-top: 7vh;
+  height: 6vh;
+  margin-top: 3vh;
   width: 20vw; 
 
 }
@@ -84,12 +84,16 @@
   border: 1px solid #00000070;
   border-radius: 10px;
   margin: auto;
-  margin-top: 12vh;
-  height: 70vh;
+  margin-top: 3vh;
+  height: 87vh;
   width: 50vw;  
 }
 
 .reportComponentContent .table tbody tr td{
   font-size: 100%;
   font-weight: bold;
+}
+
+.chartWrapper{
+ 
 }

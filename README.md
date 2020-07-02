@@ -11,5 +11,6 @@ Step to run this application:
     b. Download link: https://nodejs.org/en/download/  
   3. Run the project using CLI
     a. Route to your project location using command line.
-    b. Type these command respectively to run the project: npm install, npm start
+    b. Install all npm dependency using this command: npm install (Only run this command once after cloning from github)
+    c. Run the project using this command: npm start
 

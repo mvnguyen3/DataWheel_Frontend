@@ -54,6 +54,31 @@ export const getAverageTime = _=> {
     })
 }
 
+export const getAverageClick = _=> {
+    return({
+        type: ActionTypes.COUNTER_GET_AVERAGE_CLICK,
+        payload: new Promise((resolve, reject) => {
+            fetch(API_ENDPOINT.concat('/getAverageClick'), {
+                method: 'GET',
+            }).then(response => response.json())
+                .then(responseJson => resolve(responseJson))
+                .catch(error => reject(error))
+        })
+    })
+}
+
+export const getAllClicks = _=> {
+    return({
+        type: ActionTypes.COUNTER_GET_ALL_CLICK,
+        payload: new Promise((resolve, reject) => {
+            fetch(API_ENDPOINT.concat('/getAllClick'), {
+                method: 'GET',
+            }).then(response => response.json())
+                .then(responseJson => resolve(responseJson))
+                .catch(error => reject(error))
+        })
+    })
+}
 
 
 
