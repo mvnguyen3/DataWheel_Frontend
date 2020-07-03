@@ -1,6 +1,6 @@
 export const modifyClickRateList = (click_rate_list, maxColumn) => {
     const length = click_rate_list.length;
-    if (length != 0) {        
+    if (length != 0) {
         let index = 0;
         while (index < maxColumn) {
             const clickTimeStart = convertToTimeObject(click_rate_list[index].clickTimeStart);
@@ -33,9 +33,19 @@ const buildTimeLine = (clickTimeStart, clickTimeEnd) => {
 export const sortRateListASC = click_rate_list => {
     click_rate_list.sort((a, b) => {
         const a_clickTimeStart = convertToTimeObject(a.clickTimeStart);
-        const b_clickTimeStart = convertToTimeObject(b.clickTimeStart);       
-        if (a_clickTimeStart.hour == b_clickTimeStart.hour)
-            return a_clickTimeStart.minute - b_clickTimeStart.minute;
-        return a_clickTimeStart.hour - b_clickTimeStart.hour;
+        const b_clickTimeStart = convertToTimeObject(b.clickTimeStart);
+        if (a_clickTimeStart.month == b_clickTimeStart.month) {
+            if (a_clickTimeStart.day == b_clickTimeStart.day) {
+                if (a_clickTimeStart.minute == b_clickTimeStart.minute) {
+                    if (a_clickTimeStart.second == b_clickTimeStart.second) {
+                        return a_clickTimeStart.millisecond - b_clickTimeStart.millisecond;
+                    }
+                    return a_clickTimeStart.second - b_clickTimeStart.second;
+                }
+                return a_clickTimeStart.minute - b_clickTimeStart.minute;
+            }
+            return a_clickTimeStart.day - b_clickTimeStart.day;
+        }
+        return a_clickTimeStart.month - b_clickTimeStart.month;       
     })
 }
